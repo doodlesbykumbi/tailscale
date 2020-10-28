@@ -48,7 +48,7 @@ specify any flags, options are reset to their default.
 		upf.BoolVar(&upArgs.singleRoutes, "host-routes", true, "install host routes to other Tailscale nodes")
 		upf.BoolVar(&upArgs.shieldsUp, "shields-up", false, "don't allow incoming connections")
 		upf.BoolVar(&upArgs.forceReauth, "force-reauth", false, "force reauthentication")
-		upf.StringVar(&upArgs.advertiseTags, "advertise-tags", "", "ACL tags to request (comma-separated, e.g. eng,montreal,ssh)")
+		upf.StringVar(&upArgs.advertiseTags, "advertise-tags", "", "ACL tags to request (comma-separated, e.g. tag:eng,tag:montreal,tag:ssh), tags must start with 'tag:'")
 		upf.StringVar(&upArgs.authKey, "authkey", "", "node authorization key")
 		upf.StringVar(&upArgs.hostname, "hostname", "", "hostname to use instead of the one provided by the OS")
 		if runtime.GOOS == "linux" || isBSD(runtime.GOOS) || version.OS() == "macOS" {
